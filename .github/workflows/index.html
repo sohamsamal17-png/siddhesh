@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love 💖</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    text-align: center;
+    color: white;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    margin-top: 40px;
+    font-size: 2rem;
+    padding: 0 15px;
+  }
+
+  .container {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  button {
+    margin: 20px;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    background: #ff4081;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  button:hover {
+    background: #e91e63;
+  }
+
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 1.5rem; }
+    .container { font-size: 1rem; }
+  }
+</style>
+</head>
+
+<body>
+
+<h1>🎉 HAPPY BIRTHDAY MY DEAREST WIFEYYYYY 💗✨</h1>
+
+<button onclick="showMessage()">Click Here 💌</button>
+
+<div class="container" id="message" style="display:none;">
+
+<p>✨✨💗💗💗🧿💗💗💗✨✨</p>
+
+<p>First of all I want to tell you that On your special day, I want to express my gratitude for having you as my wife 🧿💝 Every day spent with you feels like a beautiful dream I never want to wake up from....</p>
+
+<p>^_^</p>
+
+<p>Babe you are not just my wife you are my confidante, partner, and greatest supporter.. 💞</p>
+
+<p>Once again to the woman who makes my world complete, happy birthday....You are my once-in-a-lifetime love... 💓</p>
+
+<p>I want to express you that when we are together, the world disappears, and I see only your beautiful eyes and enigmatic smile, and hear only your lovely voice... 🩷</p>
+
+<p>Every day feels like a celebration with you by my side, but today is extra special ,Happy birthday my gorgeous lady... 💘</p>
+
+<p>I was only drifting through life until I met you. You taught me how to live life to the fullest, I express my thanks to the heaven above for bringing you into my life and make it as much as beautiful that I never ever expected.... 💌</p>
+
+<p>Several lifetimes would not be enough for me to show you what you mean to me, My only request to you is that please stay with me forever don't ever leave me. My whole life is about you, for you and with you.... 💗</p>
+
+<p>I I I I Loveeee Youuuu more than anything!.........you can't even understand how much my love is mean to you!.... 💖</p>
+
+<p><strong>~ ONCE AGAIN MANY MANY HAPPY RETURNS OF THE DAY TO MY CRAZIEST WIFE!! 💗✨</strong></p>
+
+</div>
+
+<canvas id="confetti"></canvas>
+
+<script>
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let confetti = [];
+
+function createConfetti() {
+  for (let i = 0; i < 200; i++) {
+    confetti.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height - canvas.height,
+      r: Math.random() * 6 + 2,
+      d: Math.random() * 50,
+      color: "hsl(" + Math.random() * 360 + ", 100%, 50%)"
+    });
+  }
+}
+
+function drawConfetti() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  confetti.forEach((c) => {
+    ctx.beginPath();
+    ctx.fillStyle = c.color;
+    ctx.fillRect(c.x, c.y, c.r, c.r);
+  });
+
+  updateConfetti();
+}
+
+function updateConfetti() {
+  confetti.forEach((c) => {
+    c.y += 2;
+    if (c.y > canvas.height) {
+      c.y = -10;
+      c.x = Math.random() * canvas.width;
+    }
+  });
+}
+
+function showMessage() {
+  document.getElementById("message").style.display = "block";
+  createConfetti();
+  setInterval(drawConfetti, 20);
+}
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
+
+</body>
+</html>
